@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Handjet', cursive, sans-serif;
+    --font-body: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Space Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  /* All headings and headings children use Handjet display font */
+  h1, h2, h3, h4, h5, h6,
+  h1 *, h2 *, h3 *, h4 *, h5 *, h6 *,
+  .font-pixel, .font-display, .font-handjet, [data-heading] {
+    font-family: var(--font-heading) !important;
+    letter-spacing: 0.04em;
+  }
+
+  /* Monospace overrides specifically for code, CLI commands, and telemetry */
+  pre, code, kbd, samp, .font-mono-code, [data-mono] {
+    font-family: var(--font-mono) !important;
+  }
+}
+
+.font-pixel,
+.font-display,
+.font-handjet,
+.font-handjet * {
+  font-family: 'Handjet', cursive, sans-serif !important;
+}
+
+.font-pretendard {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif !important;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', 'Space Mono', monospace !important;
+}
